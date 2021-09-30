@@ -34,10 +34,11 @@ void ft_odd_numbers(int n)
     }
 }
 
-
+/*
 int main()
 {
     ft_odd_numbers(5);
     ft_odd_numbers(-5);
     return (0);
 }
+*/
