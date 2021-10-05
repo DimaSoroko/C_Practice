@@ -21,21 +21,25 @@ void ft_descriptive_hundred(int n)
 {
     int n_hundred;
     int under_hundred;
-
     if (n < 999)
     {
-        if (n < 100)
+        if (n >= 0)
         {
-            n_hundred = 0;
-            under_hundred = n;
-        }
-        else if (n >= 100)
-        {
-            n_hundred = n / 100;
-            under_hundred = n % 100;
-        }
 
-        printf("%d Hundred %d\n", n_hundred, under_hundred);
+            if (n <= 999)
+            {
+                n_hundred = n / 100;
+                under_hundred = n % 100;
+            }
+
+            if (n < 100)
+            {
+                n_hundred = 0;
+                under_hundred = n;
+            }
+
+            printf("%d Hundred %d\n", n_hundred, under_hundred);
+        }
     }
 }
 
@@ -44,7 +48,9 @@ int main()
 {
     ft_descriptive_hundred(5);
     ft_descriptive_hundred(256);
+    ft_descriptive_hundred(0);
     ft_descriptive_hundred(1000);
+    ft_descriptive_hundred(-34);
     return (0);
 }
 */
