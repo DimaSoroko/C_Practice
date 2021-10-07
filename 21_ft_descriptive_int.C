@@ -40,7 +40,7 @@ void ft_descriptive_int(int n)
         n_thousand = n % 1000000 / 1000;
         n_hundred = n % 1000 / 100;
         under_hundred = n % 100;
-        printf("%d Milliars %d Millions %d Thousands %d Hundreds %d\n", n_milliards, n_millions, n_thousand, n_hundred, under_hundred);
+        printf("%d Milliards %d Millions %d Thousands %d Hundreds %d\n", n_milliards, n_millions, n_thousand, n_hundred, under_hundred);
     }
 
     else if (n <= 1000000000 && n >= 1000000)
@@ -71,24 +71,60 @@ void ft_descriptive_int(int n)
         printf("%d\n", under_hundred);
     }
 
-    else if (n < 0)
+    else if (n < 0 && n >= -100)
+    {
+        under_hundred = n % 100;
+        printf("%d\n", under_hundred);
+    }
+
+    else if (n < 0 && n >= -1000)
+    {
+        n_hundred = n % 1000 / 100;
+        under_hundred = -n % 100;
+        printf("%d Hundreds %d\n", n_hundred, under_hundred);
+    }
+    else if (n < -1000 && n >= -1000000)
+    {
+        n_thousand = n % 1000000 / 1000;
+        n_hundred = -n % 1000 / 100;
+        under_hundred = -n % 100;
+        printf("%d Thousands %d Hundreds %d\n", n_thousand, n_hundred, under_hundred);
+    }
+
+    else if (n < -1000000 && n >= -1000000000)
+    {
+        n_millions = n % 1000000000 / 1000000;
+        n_thousand = -n % 1000000 / 1000;
+        n_hundred = -n % 1000 / 100;
+        under_hundred = -n % 100;
+        printf("%d Millions %d Thousands %d Hundreds %d\n", n_millions, n_thousand, n_hundred, under_hundred);
+    }
+
+    else if (n <= -1000000000)
     {
         n_milliards = n / 1000000000;
-        n_millions = n % 1000000000 / 1000000;
-        n_thousand = n % 1000000 / 1000;
-        n_hundred = n % 1000 / 100;
-        under_hundred = n % 100;
-        printf("%d Milliars %d Millions %d Thousands %d Hundreds %d\n", n_milliards, n_millions, n_thousand, n_hundred, under_hundred);
+        n_millions = -n % 1000000000 / 1000000;
+        n_thousand = -n % 1000000 / 1000;
+        n_hundred = -n % 1000 / 100;
+        under_hundred = -n % 100;
+        printf("%d Milliards %d Millions %d Thousands %d Hundreds %d\n", n_milliards, n_millions, n_thousand, n_hundred, under_hundred);
     }
 }
 
+/*
 int main()
 {
-    ft_descriptive_int(1100000000);
+    ft_descriptive_int(1999999999);
     ft_descriptive_int(999999999);
     ft_descriptive_int(999999);
     ft_descriptive_int(999);
+    ft_descriptive_int(99);
     ft_descriptive_int(0);
-    ft_descriptive_int(-1200200200);
+    ft_descriptive_int(-99);
+    ft_descriptive_int(-999);
+    ft_descriptive_int(-999999);
+    ft_descriptive_int(-999999999);
+    ft_descriptive_int(-1999999999);
     return (0);
 }
+*/
