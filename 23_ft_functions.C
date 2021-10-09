@@ -27,7 +27,7 @@ int ft_double_value(int n)
 {
     int returned_value;
 
-    returned_value = n * n;
+    returned_value = n * 2;
     return (returned_value);
 }
 
@@ -59,10 +59,10 @@ int main(void)
     int ft_opposite_sign_ret;
 
     d = 2;
-    ft_digit_to_char_ret = ft_digit_to_char(2);
-    ft_double_value_ret = ft_double_value(2);
-    ft_my_increment_ret = ft_my_increment(2);
-    ft_opposite_sign_ret = ft_opposite_sign(2);
+    ft_digit_to_char_ret = ft_digit_to_char(d);
+    ft_double_value_ret = ft_double_value(d);
+    ft_my_increment_ret = ft_my_increment(d);
+    ft_opposite_sign_ret = ft_opposite_sign(d);
     printf("d: [%d]\n", d);                                       // 2
     printf("ft_digit_to_char_ret: [%c]\n", ft_digit_to_char_ret); // 2
     printf("ft_double_value_ret: [%d]\n", ft_double_value_ret);   // 4
