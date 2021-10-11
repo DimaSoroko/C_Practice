@@ -62,8 +62,8 @@ int ft_police(void)
 
 int main(void)
 {
-    int secret_code = 2147483647;
-    ft_police(), ft_captain(), ft_commisionner(), ft_fbi(), ft_cia(), ft_homeland_security(), ft_president();
+    ft_police(), ft_captain(), ft_commisionner(), ft_fbi(), ft_cia(), ft_homeland_security();
+    int secret_code = ft_president();
     printf("The secret code is: %d\n", secret_code);
     return (0);
 }
