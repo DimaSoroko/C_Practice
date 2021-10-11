@@ -27,43 +27,42 @@ int ft_president(void)
 int ft_homeland_security(void)
 {
     printf("-I'll call the president right now. Please stay on the line.\n");
-    return (0);
+    return (ft_president());
 }
 
 int ft_cia(void)
 {
     printf("-Wow this seems too important for the CIA to handle. I'll give you homeland security.\n");
-    return (0);
+    return (ft_homeland_security());
 }
 
 int ft_fbi(void)
 {
     printf("-FBI doesn't have the necessary ressources, listen just talk to the CIA, okay?\n");
-    return (0);
+    return (ft_cia());
 }
 
 int ft_commisionner(void)
 {
     printf("-This is out of the commisionner's jurisdiction, I'll transfer you.\n");
-    return (0);
+    return (ft_fbi());
 }
 
 int ft_captain(void)
 {
     printf("-This is the captain of the precinct, couldn't 911 help you?\n");
-    return (0);
+    return (ft_commisionner());
 }
 
 int ft_police(void)
 {
     printf("-911, what's your emergency?\n");
-    return (0);
+    return (ft_captain());
 }
 
 int main(void)
 {
-    ft_police(), ft_captain(), ft_commisionner(), ft_fbi(), ft_cia(), ft_homeland_security();
-    int secret_code = ft_president();
+    int secret_code = ft_police();
     printf("The secret code is: %d\n", secret_code);
     return (0);
 }
