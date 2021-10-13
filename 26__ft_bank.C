@@ -33,12 +33,37 @@ ft_bank("feed a stray possum", 999, -32); //returns -32
 
 */
 
+
 #include <stdio.h>
 #include <string.h>
 
+int ft_withdrawal(char *str, char *str2)
+{
+    int result;
+    result = strcmp(str, str2);
+    return (result);
+}
+
+int ft_deposit(char *str, char *str2)
+{
+    int result;
+    result = strcmp(str, str2);
+    return (result);
+}
+
+int ft_check_balance(char *str, char *str2)
+{
+    int result;
+    result = strcmp(str, str2);
+    return (result);
+}
+
 int ft_bank(char *operation, int current_balance, int modification)
 {
-    if (operation == "withdrawal")
+    char *str_1 = "withdrawal";
+    char *str_2 = "deposit";
+    char *str_3 = "check balance";
+    if (!ft_withdrawal(str_1, operation))
     {
         if (modification > 0)
         {
@@ -51,7 +76,7 @@ int ft_bank(char *operation, int current_balance, int modification)
         }
     }
 
-    else if (operation == "deposit")
+    else if (!ft_deposit(str_2, operation))
     {
         if (modification > 0)
         {
@@ -64,7 +89,7 @@ int ft_bank(char *operation, int current_balance, int modification)
         }
     }
 
-    else if (operation == "check balance")
+    else if (!ft_check_balance(str_3, operation))
     {
         return (current_balance);
     }
@@ -73,22 +98,22 @@ int ft_bank(char *operation, int current_balance, int modification)
     {
         return (modification);
     }
+
     return (0);
 }
 
 
-/*
 int main()
 {
+
     printf("%d\n", ft_bank("withdrawal", 1500, 200));
-    printf("%d\n",ft_bank("withdrawal", 1500, -200));
-    printf("%d\n",ft_bank("deposit", 100, 400));
-    printf("%d\n",ft_bank("deposit", 100, -400));
-    printf("%d\n",ft_bank("check balance", -315, 45));
-    printf("%d\n",ft_bank("CHECK BALANCE", -315, 45));
-    printf("%d\n",ft_bank("buy a monocycle", 360, 46));
-    printf("%d\n",ft_bank("feed a stray possum", 999, -32));
+    printf("%d\n", ft_bank("withdrawal", 1500, -200));
+    printf("%d\n", ft_bank("deposit", 100, 400));
+    printf("%d\n", ft_bank("deposit", 100, -400));
+    printf("%d\n", ft_bank("check balance", -315, 45));
+    printf("%d\n", ft_bank("CHECK BALANCE", -315, 45));
+    printf("%d\n", ft_bank("buy a monocycle", 360, 46));
+    printf("%d\n", ft_bank("feed a stray possum", 999, -32));
 
     return (0);
 }
-*/
