@@ -1,4 +1,3 @@
-
 /*
 Write the function ft_bank that will be prototyped as follows:
 
@@ -33,76 +32,71 @@ ft_bank("feed a stray possum", 999, -32); //returns -32
 
 */
 
-
 #include <stdio.h>
 #include <string.h>
 
-int ft_withdrawal(char *str, char *str2)
+int ft_withdrawal(int current_balance, int modification)
 {
-    int result;
-    result = strcmp(str, str2);
+    int result = current_balance - modification; //  SAME : modification < 0 ? return (current_balance) : return (current_balance - modification);
+    if (modification < 0)
+    {
+        return (modification);
+    }
     return (result);
 }
 
-int ft_deposit(char *str, char *str2)
+int ft_deposit(int current_balance, int modification)
 {
-    int result;
-    result = strcmp(str, str2);
+    int result = current_balance + modification;
+    if (modification < 0)
+    {
+        return (modification);
+    }
     return (result);
 }
 
-int ft_check_balance(char *str, char *str2)
+int ft_check_balance(int current_balance)
 {
-    int result;
-    result = strcmp(str, str2);
-    return (result);
+    return (current_balance);
+}
+
+int ft_wrong_operation(int modification)
+{
+    return (modification);
 }
 
 int ft_bank(char *operation, int current_balance, int modification)
 {
-    char *str_1 = "withdrawal";
-    char *str_2 = "deposit";
-    char *str_3 = "check balance";
-    if (!ft_withdrawal(str_1, operation))
-    {
-        if (modification > 0)
-        {
-            return (current_balance - modification);
-        }
+    int withdrawal_result;
+    int deposit_result;
 
-        else if (modification < 0)
-        {
-            return (modification);
-        }
+    if (strcmp(operation, "withdrawal") == 0) // 1 == 0? = 0(no) / 0 == 0 = 1(yes)?
+    {
+        withdrawal_result = ft_withdrawal(current_balance, modification);
+        return (withdrawal_result);
     }
 
-    else if (!ft_deposit(str_2, operation))
+    else if (strcmp(operation, "deposit") == 0)
     {
-        if (modification > 0)
-        {
-            return (current_balance + modification);
-        }
-
-        else if (modification < 0)
-        {
-            return (modification);
-        }
+        deposit_result = ft_deposit(current_balance, modification);
+        return (deposit_result);
     }
 
-    else if (!ft_check_balance(str_3, operation))
+    else if (strcmp(operation, "check balance") == 0)
     {
+        ft_check_balance(current_balance);
         return (current_balance);
     }
 
     else
     {
+        ft_wrong_operation(modification);
         return (modification);
     }
-
     return (0);
 }
 
-
+/*
 int main()
 {
 
@@ -117,3 +111,4 @@ int main()
 
     return (0);
 }
+*/
