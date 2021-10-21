@@ -14,31 +14,47 @@ int ft_strcmp(const char *s1, const char *s2)
 {
     int i;
     i = 0;
-    int result;
-    while (s1[i] != '\0' && s2[i] != '\0')
+    
+    while ((s1[i] == s2[i]) && (s1[i] != '\0' && s2[i] != '\0')) // will read the whole strings from 0 till \0
     {
-        if (s1[i] < s2[i])
-        {
-            result = -1;
-            return (result);
-        }
-        else if (s1[i] > s2[i])
-        {
-            result = 1;
-            return (result);
-        }
-        else
-        {
-            result = 0;
-            return (result);
-        }
         i++;
     }
-    return (result);
-}
-
-int main()
-{
-    printf("%s\n", ft_strcmp("hello", "hello"));
+    if (s1[i] < s2[i])
+    {
+        return (-1);
+    }
+    else if (s1[i] > s2[i])
+    {
+       return (1);
+    }
     return (0);
 }
+
+
+/*
+int main()
+{
+    printf("%d\n", ft_strcmp("hello", "hello"));
+    printf("%d\n", ft_strcmp("hell", "hello"));
+    printf("%d\n", ft_strcmp("hello", "hell"));
+    return (0);
+}
+
+*/
+
+/* Same as:
+
+int		ft_strcmp(char *s1, char *s2)
+{
+	int i;
+
+	i = 0;
+	while ((s1[i] == s2[i]) && (s1[i] != '\0' && s2[i] != '\0')) // will read the whole strings from 0 till \0
+	{
+		i++;
+	}
+	return (s1[i] - s2[i]); // returns difference between string's chars
+}
+
+*/
+
