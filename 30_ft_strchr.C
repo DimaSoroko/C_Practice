@@ -2,7 +2,7 @@
 
 Write the function ft_strchr that will copy the exact behaviour of the function strchr
 
-The function must be prototyped as follows:  char *strchr(const char *s, int c);
+The function must be prototyped as follows:  char *ft_strchr(const char *s, int c);
 
 Allowed functions:	none
 
