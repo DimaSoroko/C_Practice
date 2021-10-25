@@ -36,7 +36,6 @@ void ft_got_meme_generator(char *str)
   
     while (str[i] != '\0')
     {
-        i++;
         if (str[i] == 'e')
         {
             str[i] = 'i';
@@ -49,6 +48,7 @@ void ft_got_meme_generator(char *str)
         {
             str[i] = 'i';
         }
+      i++;
     }
 
     
