@@ -99,42 +99,49 @@ void ft_print_values(int comparison, int my_int, char my_char, char *my_str)
 }
 int main(void)
 {
-	// Initialization of variables
-	int comparison_result;
-	int my_int;
-	char my_char;
-	char *my_string;
+    // Initialization of variables
+    int comparison_result;
+    int my_int;
+    char my_char;
+    char *my_string;
 
-	// Assignation of variables
-	my_int = 0;
-	my_char = '0';
-	comparison_result = (my_int == 0);
-	my_string = "Hola";
+    // Assignation of variables
+    my_int = 0;
+    my_char = '0';
+    comparison_result = (my_int == 0);
+    my_string = "Hola";
 
-	// Print the values:
-	ft_print_values(comparison_result, my_int, my_char, my_string);
+    // Print the values:
+    ft_print_values(comparison_result, my_int, my_char, my_string);
 
-	// Second assignation block
-	// -------------------------------------------
-	my_int = 123;
+    // Second assignation block
+    // -------------------------------------------
+    my_int = 123;
+    my_char = 'z';
+    comparison_result = (my_int != (int)("Bonjour"));// (int)(my_char) - cast char into int by ascii
+    my_string = "Au revoir";
+
+    /*
+    my_int = 123;
 	my_char = 'z';
-	comparison_result = (my_int != (int)(my_char)); // 123 != 122
+	comparison_result = (my_int != (int)(my_char)); // (int)(my_char) - cast char into int by ascii 123 != 122
 	my_string = "Au revoir";
-	// -------------------------------------------
+    */
+    // -------------------------------------------
 
-	// Print the values:
-	ft_print_values(comparison_result, my_int, my_char, my_string);
+    // Print the values:
+    ft_print_values(comparison_result, my_int, my_char, my_string);
 
-	// Third assignation block
-	// -------------------------------------------
-	my_int = 4;
-	my_char = 'd';
-	comparison_result = (my_char != 'd');
-	my_string = "Ciao";
-	// -------------------------------------------
+    // Third assignation block
+    // -------------------------------------------
+    my_int = 4;
+    my_char = 'd';
+    comparison_result = (my_char != 'd');
+    my_string = "Ciao";
+    // -------------------------------------------
 
-	// Print the values:
-	ft_print_values(comparison_result, my_int, my_char, my_string);
+    // Print the values:
+    ft_print_values(comparison_result, my_int, my_char, my_string);
 
-	return (0);
+    return (0);
 }
