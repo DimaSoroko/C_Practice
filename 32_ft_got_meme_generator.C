@@ -59,6 +59,6 @@ int main(void)
     char str[30] = "Let me fight for you khaleesi";
 
     ft_got_meme_generator(str);
-    printf("%s\n", str); // Will print "Lit mi fight fir yiu khiliisi";
+    printf("%s\n", str);
     return (0);
 }
