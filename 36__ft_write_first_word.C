@@ -29,67 +29,44 @@ ft_write_first_word("NULL"); //will write "Error\n" on standard error stream
 
 #include <stdio.h>
 #include <unistd.h>
+#include <string.h>
+
+int ft_isspace(char c)
+{
+    if (c == ' ' || c == '\t' || c == '\n' || c == '\r' || c == '\v' || c == '\f')
+    {
+
+        return (1);
+    }
+
+    return (0);
+}
+
+int ft_strlen(char *str)
+{
+    int i;
+
+    i = 0;
+    while (str[i] != '\0')
+    {
+        i++;
+    }
+    return (i);
+}
 
 void ft_write_first_word(char *str)
 {
 
-    if (str == "NULL")
+    int i;
+    i = 0;
+    if (str[i] != ft_isspace(str[i]) && str != NULL) // str[i] != ' ' || str[i] != '\t' || str[i] != '\n' || str[i] != '\r' || str[i] != '\v' || str[i] != '\f'
     {
-        write(1, "Error\n", 7);
+        write(2, str, ft_strlen(str));
         write(1, "\n", 1);
     }
-
-    else if (str == "Bonjour")
-    {
-        write(1, "Bonjour\\n", 9);
-        write(1, "\n", 1);
-    }
-
-    else if (str == "Bon jour")
-    {
-        write(1, "Bon\\n", 5);
-        write(1, "\n", 1);
-    }
-
-    else if (str == "Bon\tjour")
-    {
-        write(1, "Bon\\n", 5);
-        write(1, "\n", 1);
-    }
-
-    else if (str == "")
-    {
-        write(1, "\\n", 2);
-        write(1, "\n", 1);
-    }
-
-    else if (str == "         ")
-    {
-        write(1, "\\n", 2);
-        write(1, "\n", 1);
-    }
-
-    else if (str == "\r\r\r\r")
-    {
-        write(1, "\\n", 2);
-        write(1, "\n", 1);
-    }
-
-    else if (str == " Bon jour")
-    {
-        write(1, "Bon\\n", 5);
-        write(1, "\n", 1);
-    }
-
-    else if (str == " Bonjour")
-    {
-        write(1, "Bonjour\\n", 9);
-        write(1, "\n", 1);
-    }
+    
 }
 
-
-/*
 int main()
 {
     ft_write_first_word("Bonjour");   //will write "Bonjour\n" on standard output stream
@@ -104,4 +81,3 @@ int main()
 
     return (0);
 }
-*/
