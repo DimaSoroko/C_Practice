@@ -31,6 +31,11 @@ ft_write_first_word("NULL"); //will write "Error\n" on standard error stream
 #include <unistd.h>
 #include <string.h>
 
+void ft_putchar(char c)
+{
+    write(1, &c, 1); 
+}
+
 int ft_isspace(char c)
 {
     if (c == ' ' || c == '\t' || c == '\n' || c == '\r' || c == '\v' || c == '\f')
@@ -42,42 +47,44 @@ int ft_isspace(char c)
     return (0);
 }
 
-int ft_strlen(char *str)
-{
-    int i;
-
-    i = 0;
-    while (str[i] != '\0')
-    {
-        i++;
-    }
-    return (i);
-}
-
 void ft_write_first_word(char *str)
 {
 
     int i;
     i = 0;
-    if (str[i] != ft_isspace(str[i]) && str != NULL) // str[i] != ' ' || str[i] != '\t' || str[i] != '\n' || str[i] != '\r' || str[i] != '\v' || str[i] != '\f'
+    if(str == NULL)
     {
-        write(2, str, ft_strlen(str));
-        write(1, "\n", 1);
+        write(2, "Error", 6);
     }
-    
+
+    while ((ft_isspace(str[i]) == 1) && str[i] != '\0')
+    {
+        i++;
+    }
+
+    while ((ft_isspace(str[i]) == 0) && str[i] != '\0')
+    {
+        ft_putchar(str[i]);
+        i++;
+    }
+
+    write(1, "\n", 1);
 }
 
+/*
 int main()
 {
-    ft_write_first_word("Bonjour");   //will write "Bonjour\n" on standard output stream
-    ft_write_first_word("Bon jour");  //will write "Bon\n" on standard output stream
-    ft_write_first_word("Bon\tjour"); //will write "Bon\n" on standard output stream
-    ft_write_first_word("");          //will write "\n" on standard output stream
-    ft_write_first_word("         "); //will write "\n" on standard output stream
-    ft_write_first_word("\r\r\r\r");  //will write "\n" on standard output stream
-    ft_write_first_word(" Bon jour"); //will write "Bon\n" on standard output stream
-    ft_write_first_word(" Bonjour");  //will write "Bonjour\n" on standard output stream
-    ft_write_first_word("NULL");      //will write "Error\n" on standard error stream
+    ft_write_first_word("Bonjour");   
+    ft_write_first_word("Bon jour");  
+    ft_write_first_word("Bon\tjour"); 
+    ft_write_first_word("");          
+    ft_write_first_word("         "); 
+    ft_write_first_word("\r\r\r\r");  
+    ft_write_first_word(" Bon jour"); 
+    ft_write_first_word(" Bonjour");  
+    ft_write_first_word(NULL);     
 
     return (0);
 }
+
+*/
