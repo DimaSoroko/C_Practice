@@ -40,7 +40,7 @@ void ft_write_one_in_two_chars(char *str)
 
     if (str == NULL)
     {
-        write(1, "NULL", 5);
+        write(1, "NULL\n", 6); // need '\n' cos return stops the function
         return;
     }
 
@@ -51,11 +51,10 @@ void ft_write_one_in_two_chars(char *str)
 
     else
     {
-
         while (str[i] != '\0')
         {
 
-            if (i % 2 != 0 )
+            if (i % 2 != 0) // if 'i' is odd number
             {
                 i++;
             }
@@ -71,16 +70,13 @@ void ft_write_one_in_two_chars(char *str)
     write(1, "\n", 1);
 }
 
-/*
 int main()
 {
-    ft_write_one_in_two_chars("Dima");       
-    ft_write_one_in_two_chars("raw");       
-    ft_write_one_in_two_chars("god");        
-    ft_write_one_in_two_chars("0123456789"); 
-    ft_write_one_in_two_chars("");           
-    ft_write_one_in_two_chars(NULL);        
+    ft_write_one_in_two_chars("Dima");
+    ft_write_one_in_two_chars("raw");
+    ft_write_one_in_two_chars("god");
+    ft_write_one_in_two_chars("0123456789");
+    ft_write_one_in_two_chars("");
+    ft_write_one_in_two_chars(NULL);
     return (0);
 }
-
-*/
