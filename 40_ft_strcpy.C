@@ -7,7 +7,6 @@ Allowed functions:	none
 */
 
 #include <stdio.h>
-#include <string.h>
 
 char *ft_strcpy(char *dest, char *src)
 {
