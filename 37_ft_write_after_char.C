@@ -28,43 +28,52 @@ ft_write_after_char("Dididima", 'd') // will print "idima" followed by a newline
 
 #include <stdio.h>
 #include <unistd.h>
-#include <ctype.h>
+
+void ft_putchar(char c)
+{
+    write(1, &c, 1);
+}
 
 void ft_write_after_char(char *str, char c)
 {
     int i;
     i = 0;
-    if (str != NULL && str[i] != '\0')
+
+    if (str == NULL)
     {
-        while(str[i] != c && str[i] != '\0')
+        return;
+    }
+
+    else if (str[i] != '\0')
+    {
+
+        while (str[i] != c && str[i] != '\0')
         {
             i++;
         }
 
         while (str[i] != '\0')
         {
-            i++;
-            write(1, &str[i], 1);
+            i++; // first skip 'i' then print till '\0'
+            ft_putchar(str[i]);
         }
-        write(1, "\n", 1);
     }
+    write(1, "\n", 1);
 }
 
 /*
 
 int main()
 {
-    ft_write_after_char("Dima", 'i'); //will print "ma", followed by a newline
-    ft_write_after_char("Dima", 'D'); // will print "ima", followed by a newline
-    ft_write_after_char("Dima", 'G'); // will only print a newline character
-    ft_write_after_char("Dima", 'a'); // will only print a newline character
-    ft_write_after_char(NULL, 'o');       // will print nothing
-    ft_write_after_char("Dima", '\0');    //will only print a newline character
-    ft_write_after_char("Diiima", 'i');   // will print "iima" followed by a newline
-    ft_write_after_char("Dididima", 'd'); // will print "idima" followed by a newline*/
+    ft_write_after_char("Dima", 'i');     
+    ft_write_after_char("Dima", 'D');     
+    ft_write_after_char("Dima", 'G');     
+    ft_write_after_char("Dima", 'a');     
+    ft_write_after_char(NULL, 'o');      
+    ft_write_after_char("Dima", '\0');    
+    ft_write_after_char("Diiima", 'i');   
+    ft_write_after_char("Dididima", 'd'); 
     return (0);
-
 }
 
 */
-

@@ -70,7 +70,9 @@ void ft_write_one_in_two_chars(char *str)
     write(1, "\n", 1);
 }
 
+
 /*
+
 int main()
 {
     ft_write_one_in_two_chars("Dima");

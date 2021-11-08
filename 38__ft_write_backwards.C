@@ -37,11 +37,11 @@ void ft_write_backwards(char *str)
 
     if (str == NULL) // check Null always first
     {
-        write(1, "NULL", 5);
+        write(1, "NULL\n", 5); // need '\n' cos return stops the function
         return; // then stop
     }
 
-    else if (str[0] == '\0') // str[0] == '\0' - emptry string
+    else if (str[0] == '\0') // str[0] == '\0' - empty string
     {
         return; // do nothing
     }
@@ -55,25 +55,23 @@ void ft_write_backwards(char *str)
 
         if (str[i] == '\0')
         {
-            i--; // i = \0 -1 (in Dima i = 'a')
+            i--; // i = '\0' -1 (in Dima i = 'a')
         }
 
         while (i >= 0) // till i(a) != 0(D)
         {
-            ft_putchar(str[i]); // putchar
-            i--;
+            ft_putchar(str[i]); 
+            i--; // print backward
         }
     }
 
-    write(1, "\n", 1); // new line
+    write(1, "\n", 1); 
 }
-
 
 /*
 
 int main()
 {
-
     int n = 4;
     int a = 45;
     char str2[5] = "Dima";
@@ -86,8 +84,8 @@ int main()
     ft_write_backwards("0123456789"); 
     ft_write_backwards("000");        
     ft_write_backwards(NULL);         
-
     return (0);
 }
 
 */
+

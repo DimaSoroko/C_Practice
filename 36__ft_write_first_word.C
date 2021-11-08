@@ -33,7 +33,7 @@ ft_write_first_word("NULL"); //will write "Error\n" on standard error stream
 
 void ft_putchar(char c)
 {
-    write(1, &c, 1); 
+    write(1, &c, 1);
 }
 
 int ft_isspace(char c)
@@ -52,39 +52,46 @@ void ft_write_first_word(char *str)
 
     int i;
     i = 0;
-    if(str == NULL)
-    {
-        write(2, "Error", 6);
-    }
 
-    while ((ft_isspace(str[i]) == 1) && str[i] != '\0')
+    if (str == NULL)
     {
-        i++;
+        write(2, "Error\n", 7);
+        return;
     }
-
-    while ((ft_isspace(str[i]) == 0) && str[i] != '\0')
+    
+    else
     {
-        ft_putchar(str[i]);
-        i++;
+        while ((ft_isspace(str[i]) == 1) && str[i] != '\0') // ft_isspace returns 1
+        {
+            i++;
+        }
+
+        while ((ft_isspace(str[i]) == 0) && str[i] != '\0') // ft_isspace returns 0
+        {
+            ft_putchar(str[i]);
+            i++;
+        }
     }
 
     write(1, "\n", 1);
 }
 
 /*
+
 int main()
 {
     ft_write_first_word("Bonjour");   
     ft_write_first_word("Bon jour");  
     ft_write_first_word("Bon\tjour"); 
     ft_write_first_word("");          
-    ft_write_first_word("         "); 
+    ft_write_first_word("         ");
     ft_write_first_word("\r\r\r\r");  
     ft_write_first_word(" Bon jour"); 
     ft_write_first_word(" Bonjour");  
-    ft_write_first_word(NULL);     
-
+    ft_write_first_word(NULL);        
     return (0);
 }
 
 */
+
+
