@@ -87,6 +87,8 @@ int ft_real_atoi(char *str)
     }
 }
 
+/*
+
 int main()
 {
     printf("%d\n", ft_real_atoi(NULL));
@@ -101,3 +103,5 @@ int main()
     printf("%d\n", ft_real_atoi("+-+-+-+-+-1234567890+-+-+-+-+-"));
     return (0);
 }
+
+*/
