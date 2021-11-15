@@ -58,7 +58,7 @@ int ft_mini_atoi(char *str)
     {
         res = res * 10 + (str[i] - '0'); // '0' = 48(ascii), 1 = 49(ascii), 49 - 48 = 1
         //res = 0 * 10 + (49-48) = 1 so str[0] = 1
-        // the res = 1 * 10 + (50 -48) = 2 so str[1] = 2
+        // then res = 1 * 10 + (50 -48) = 2 so str[1] = 2
         // etc till '\0'
         i++;
     }
