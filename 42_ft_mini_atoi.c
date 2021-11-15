@@ -30,7 +30,7 @@ ft_mini_atoi("123"); //will return 123
 ft_mini_atoi("-789"); //will return -789
 ft_mini_atoi("-0"); //will return 0
 
-Allowed funcft_mini_atoi("-789")tions:	none
+Allowed functions:	none
 
 */
 
