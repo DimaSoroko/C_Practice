@@ -51,7 +51,7 @@ int ft_real_atoi(char *str)
 
     int i;
     int sign;
-    long res;
+    int res;
     i = 0;
     sign = 1;
     res = 0;
@@ -77,7 +77,7 @@ int ft_real_atoi(char *str)
             i++;
         }
 
-        while ((str[i] >= '0' && str[i] <= '9') && str[i] != '\0') // less then 57 and more then 48 (all non digest)
+        while ((str[i] >= '0' && str[i] <= '9') && str[i] != '\0') // less then 57 and more then 48 (all digest)
         {
             res = res * 10 + (str[i] - '0');
             i++;
@@ -87,21 +87,18 @@ int ft_real_atoi(char *str)
     }
 }
 
-/*
-
 int main()
 {
     printf("%d\n", ft_real_atoi(NULL));
     printf("%d\n", ft_real_atoi("\t-124a64"));
     printf("%d\n", ft_real_atoi("\r+000000\v"));
-    printf("%d\n", ft_real_atoi("632"));
+    printf("%d\n", ft_real_atoi("+632"));
+    printf("%d\n", ft_real_atoi("-123\n85"));
     printf("%d\n", ft_real_atoi("\f \f"));
     printf("%d\n", ft_real_atoi("1000000000000000000000"));
     printf("%d\n", ft_real_atoi("-1000000000000000000000"));
     printf("%d\n", ft_real_atoi("abc18"));
-    printf("%d\n", ft_real_atoi("+4294967296"));
+    printf("%d\n", ft_real_atoi("4294967296"));
     printf("%d\n", ft_real_atoi("+-+-+-+-+-1234567890+-+-+-+-+-"));
     return (0);
 }
-
-*/
