@@ -76,7 +76,6 @@ int main()
     printf("%d\n", ft_mini_atoi("123"));
     printf("%d\n", ft_mini_atoi("-789"));
     printf("%d\n", ft_mini_atoi("-0"));
-
     return (0);
 }
 
