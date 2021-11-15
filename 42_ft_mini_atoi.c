@@ -68,6 +68,8 @@ int ft_mini_atoi(char *str)
     }
 }
 
+/*
+
 int main()
 {
     printf("%d\n", ft_mini_atoi(NULL));
@@ -77,3 +79,5 @@ int main()
 
     return (0);
 }
+
+*/
