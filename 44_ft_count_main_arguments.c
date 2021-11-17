@@ -28,6 +28,6 @@ int main(int argc, char *argv[])
 // The first argument of main is argc which is the number of arguments passed to your program. 
 // This is at least 1, which is the name of the executable.
 {
-	printf("%d\n", argc - 1);
+	printf("The number of arguments is: %d\n", argc - 1);
 	return 0;
 }
