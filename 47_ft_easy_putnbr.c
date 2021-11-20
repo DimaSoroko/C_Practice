@@ -48,8 +48,6 @@ void ft_putstr(char *str)
 
 void ft_easy_putnbr(int n)
 {
-    int sign;
-    sign = 1;
     if (n % 8 == 0 && n % 5 == 0)
     {
         ft_putstr("Muy bien");
