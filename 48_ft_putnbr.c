@@ -21,17 +21,25 @@ void ft_putchar(char c)
 void ft_putnbr(int n)
 {
 
-    if (n >= 0 && n < 10)
+    if (n == 2147483648)
     {
-        ft_putchar(n + '0');
+        ft_putchar('2');
+        n = 147483648;
     }
-    else if (n < 0)
+    if (n == -2147483648)
     {
-        write(1, "\n", 1);
+
         ft_putchar('-');
-        ft_putnbr(-n);
+        ft_putchar('2');
+        n = 147483648;
     }
-    else
+    if (n < 0)
+    {
+        ft_putchar('-');
+        n = -n;
+    }
+
+    if (n >= 10)
     {
         ft_putnbr(n / 10);
         ft_putnbr(n % 10);
@@ -50,18 +58,22 @@ void ft_putnbr(int n)
         ft_putnbr(12 / 10) = 1 
         ft_putnbr(12 % 10) = 2
         Then will execute to the top ft_putnbr(1), ft_putnbr(2), ft_putnbr(3), ft_putnbr(4), ft_putnbr(5)
-
         */
+    }
+
+    else
+    {
+        ft_putchar(n + '0');
     }
 }
 
 /*
-
 int main(void)
 {
-    ft_putnbr(2147483647);
-    ft_putnbr(-2147483647);
+    ft_putnbr(2147483648);
+    ft_putnbr(27);
+    ft_putnbr(-47);
+    ft_putnbr(0);
     return (0);
 }
-
 */
