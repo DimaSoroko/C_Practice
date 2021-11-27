@@ -27,26 +27,74 @@ Allowed functions:	printf, rand, srand, time
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#include <unistd.h>
-#include <string.h>
 
-int main(int argc, char *argv[])
+int ft_isspace(char c)
+{
+    if (c == ' ' || c == '\t' || c == '\n' || c == '\r' || c == '\v' || c == '\f')
+    {
+
+        return (1);
+    }
+
+    return (0);
+}
+
+int ft_real_atoi(char *str)
 {
 
+    int i;
+    int sign;
+    int res;
+    i = 0;
+    sign = 1;
+    res = 0;
+
+    if (str == NULL)
+    {
+        return (0);
+    }
+
+    else
+    {
+        while ((ft_isspace(str[i]) == 1))
+        {
+            i++;
+        }
+
+        if (str[0] == '-')
+        {
+            sign = -1;
+            i++;
+        }
+
+        if (str[0] == '+')
+        {
+            i++;
+        }
+
+        while ((str[i] >= '0' && str[i] <= '9') && str[i] != '\0') // while less then 57 and more then 48 (all digest)
+        {
+            res = res * 10 + (str[i] - '0');
+            i++;
+        }
+
+        return (sign * res);
+    }
+}
+
+int main(int argc, char **argv)
+{
     int min;
     int max;
+    min = ft_real_atoi(argv[1]);
+    max = ft_real_atoi(argv[2]);
     int random_n;
-    min = atoi(argv[1]);
-    max = atoi(argv[2]);
 
-    if (argc > 3 || argc < 3)
+    if (argc != 3 || min >= max)
     {
         printf("Error");
     }
-    else if (min >= max)
-    {
-        printf("Error");
-    }
+
     else
     {
         srand(time(NULL)); // to prevent sequence repetition between runs
