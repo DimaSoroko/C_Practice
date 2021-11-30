@@ -87,16 +87,20 @@ void main(int argc, char **argv)
     int min;
     int max;
     int random_n;
-    min = ft_real_atoi(argv[1]);
-    max = ft_real_atoi(argv[2]);
 
-    if (argc != 3 || min >= max)
+    if (argc != 3)
     {
         printf("Error\n");
     }
 
     else
     {
+        min = ft_real_atoi(argv[1]);
+        max = ft_real_atoi(argv[2]);
+        if (min >= max)
+        {
+            printf("Error\n");
+        }
         srand(time(NULL)); // to prevent sequence repetition between runs
         random_n = (rand() % (max - min + 1)) + min;
         printf("Random between %d and %d is %d\n", min, max, random_n);
