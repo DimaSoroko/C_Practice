@@ -59,13 +59,13 @@ Can you fix it?
 char *ft_heap_string(void)
 {
     char str[14] = "Just a string";
-
-    char *p = (char *)malloc(14 * sizeof(char)); // ask  to give memory in the heap for 14 chars // same as : malloc(14*sizeof(char))
+    char *p = (char *)malloc(sizeof(char)); // ask  to give memory in the heap  // same as : malloc(14*sizeof(char))
     int i;
     i = 0;
     while (str[i] != '\0')
     {
         p[i] = str[i]; // will save alla the element of string array into 'p'(heap)
+        str[i] = '\0'; // str[14] == '\0'
         i++;
     }
 
@@ -74,12 +74,8 @@ char *ft_heap_string(void)
 
 int main(void)
 {
-   char	*heap_string;
-
-	heap_string = ft_heap_string();
-	printf("%s\n", heap_string);
-	return (0);
+    char *heap_string;
+    heap_string = ft_heap_string();
+    printf("%s\n", heap_string);
+    return (0);
 }
-
-
-
