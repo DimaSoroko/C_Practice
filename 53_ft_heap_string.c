@@ -65,10 +65,10 @@ char *ft_heap_string(void)
     while (str[i] != '\0')
     {
         p[i] = str[i]; // will save alla the element of string array into 'p'(heap)
-        str[i] = '\0'; // str[14] == '\0'
         i++;
     }
-
+    str[i] = '\0'; // str[14] == '\0'
+    p[i] = '\0';
     return (p);
 }
 
