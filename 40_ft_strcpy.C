@@ -12,12 +12,12 @@ char *ft_strcpy(char *dest, char *src)
 {
     int i;
     i = 0;
-    while (src[i] != '\0') // reads whole src string
+    while (src[i] != '\0') 
     {
-        dest[i] = src[i];
+        dest[i] = src[i]; // all the elements of both arguments are equal
         i++;
     }
-    dest[i] = src[i]; // put src value into dest
+    dest[i] = '\0'; // add '\0'
     return (dest);
 }
 
@@ -26,7 +26,7 @@ char *ft_strcpy(char *dest, char *src)
 int main()
 {
     char  src [] = "Test";
-    char  dest [] = "";
+    char  dest [] = "[]";
     printf("The value of [dest] is : %s\n",dest);
     ft_strcpy(dest, src);
     printf("The value of [dest] after [strcpy] is : %s\n",dest);
