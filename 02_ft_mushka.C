@@ -40,6 +40,7 @@ char *ft_mushka(void)
 int main()
 {
     char *heap_return;
+    
     heap_return = ft_mushka();
     printf("%s\n", heap_return);
     return (0);
