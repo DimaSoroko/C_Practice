@@ -77,3 +77,95 @@ int main(void)
     return (0);
 }
 
+
+// LONG VERSION //
+
+/*
+
+#include <unistd.h>
+#include <limits.h> // library to add min and max limits
+
+void ft_putchar(char c)
+{
+    write(1, &c, 1);
+}
+
+int ft_strlen(char *str)
+{
+    int i;
+
+    i = 0;
+
+    while (str[i])
+    {
+        i++;
+    }
+    return (i);
+}
+void ft_putstr(char *str)
+{
+    write(1, str, ft_strlen(str));
+}
+
+// 123456 -- 1 2 3 4 5 6
+// 1 -> ft_putchar(1 - '0');
+// 123456 / 100000
+int ft_find_divider(int nb)
+{
+    int divider;
+
+    divider = 1;
+    while (nb / divider != 0)
+    {
+        divider = divider * 10;
+    }
+    divider = divider / 10;
+    return (divider);
+}
+
+// 123456 / 100000
+void ft_putnbr(int nb)
+{
+    int divider;
+
+    divider = ft_find_divider(nb); // 100000
+    if (nb == INT_MIN)
+    {
+        ft_putstr("-2147483648");
+    }
+    if (nb < 0)
+    {
+        nb *= -1;
+        ft_putchar('-');
+    }
+    if (nb == 0)
+    {
+        ft_putchar('0');
+    }
+
+    while (divider != 0)
+    {
+        //printf("nb: %d div: %d\n", nb, divider);
+        if (nb <= INT_MAX)
+        {
+            ft_putchar((nb / divider) + '0');
+            nb = nb % divider;
+            divider = divider / 10;
+        }
+    }
+
+    ft_putchar('\n');
+}
+
+int main()
+{
+    ft_putnbr(-123456);
+    ft_putnbr(0);
+   // ft_putnbr(-2147483648);
+    ft_putnbr(8989595);
+
+    return (0);
+}
+
+
+*/
